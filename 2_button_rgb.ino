@@ -6,7 +6,7 @@ const byte BUTTON_A = 5;
 const byte BUTTON_B = 4;
 
 const int PWM_STEPS = 256;
-const int PWM_MAX = 255;
+const int PWM_MAX = PWM_STEPS - 1;
 
 const int stepDelay = 100;
 
@@ -20,6 +20,7 @@ void fadeBetween (byte pinFrom, byte pinTo, int fadeDelay) {
 			button_press = false;
 			break;
 		delay (fadeDelay);
+		}
 	}
 }
 
@@ -48,5 +49,4 @@ void loop () {
 		analogWrite (PIN_BLUE, 0);
 		analogWrite (PIN_GREEN, 0);
 	}
-
 }
